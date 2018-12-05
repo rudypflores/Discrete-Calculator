@@ -6,3 +6,12 @@ A calculator for all your Discrete Mathmatics Calculations!
 - Factorial
 
 ## Upcoming Features
+- Euclidean Algorithm
+- Set Builder Notation
+- Number Systems
+
+*Addition and Subtraction of:*
+
+- Multi Sets
+- Fuzzy Sets
+- Number Systems
