@@ -3,9 +3,9 @@ class Probability {
 
   //Takes in value of n, k, and also type which can equal 0 or 1.
   constructor(n, k, type) {
-    this.n = n;
-    this.k = k;
-    this.type = type;
+    this.n = Math.floor(n);
+    this.k = Math.floor(k);
+    this.type = Math.floor(type);
   }
 
   //Calculate our probability of n and k
@@ -23,10 +23,15 @@ class Probability {
 
   factorial(val) {
     //Use recursion to allow creation of factorial function
-    for(let i = val; i > 0; i--) {
-      val *= i;
-    }
-    return val;
+    let result3 = 1;
+    if(val === 0) {
+    	return 0;
+    } else {
+	    for(let i = val; i > 0; i--) {
+	      result3 = result3*i;
+	    }
+	    return result3;
+	}
   }
 
   //Formula for permutation
@@ -44,7 +49,19 @@ class Probability {
   }
 }
 
+class Algorithms {
+
+}
+
 //Test Cases
-let pTest = new Probability(3, 1, 0);
-let result = pTest.type === 1 ? 'combination' : 'permutation';
-console.log(`The ${result} of ${pTest.n} and ${pTest.k} is: ${pTest.calculate()}`);
+let probabilityTest = new Probability(Math.random()*10, Math.random()*10, Math.random()*2);
+let f = new Probability();
+let rand =  Math.floor(Math.random()*10);
+let factorialTest = f.factorial(rand);
+
+//Permutation and Combination also Factorial
+let result = probabilityTest.type === 1 ? 'combination' : 'permutation';
+console.log(`The ${result} of ${probabilityTest.n} and ${probabilityTest.k} is: ${probabilityTest.calculate()}`);
+console.log(`The result of ${rand}! is the value of: ${factorialTest}`);
+
+//Euclidean Algorithm
