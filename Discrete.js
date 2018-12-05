@@ -60,6 +60,10 @@ class Algorithm {
 	//The Euclidean Algorithm is represented as d = q * m + r.
 	euclidean() {
 		//This algorithm helps us find the GCD of two numbers
+		if(this.dividend <= this.quotient) {
+			return 1;
+		}
+
 		let multiplier = 0, result, remainder, run = true;
 
 		//First we find the remainder and multiplier
