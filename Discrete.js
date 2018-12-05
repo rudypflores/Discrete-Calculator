@@ -62,11 +62,15 @@ class Algorithms {
 		//This algorithm helps us find the GCD of two numbers
 		let m = 0, result, r;
 
-		
-		do {
-			result = this.q * m;
-			m++;
-		} while(result/this.d === 1);
+
+		r = this.d%this.q;
+		m = this.d/this.q;
+		result = this.q;
+
+		for(let i = result) {
+
+		}
+
 	}
 }
 
