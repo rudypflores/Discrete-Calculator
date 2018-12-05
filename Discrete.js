@@ -51,6 +51,23 @@ class Probability {
 
 class Algorithms {
 
+	//Euclidean Algoritm Components
+	constructor(dividend, quotient) {
+		this.d = dividend;
+		this.q = quotient;
+	}
+
+	//The Euclidean Algorithm is represented as d = q * m + r.
+	Euclidean() {
+		//This algorithm helps us find the GCD of two numbers
+		let m = 0, result, r;
+
+		
+		do {
+			result = this.q * m;
+			m++;
+		} while(result/this.d === 1);
+	}
 }
 
 //Test Cases
