@@ -49,28 +49,36 @@ class Probability {
   }
 }
 
-class Algorithms {
+class Algorithm {
 
 	//Euclidean Algoritm Components
 	constructor(dividend, quotient) {
-		this.d = dividend;
-		this.q = quotient;
+		this.dividend = dividend;
+		this.quotient = quotient;
 	}
 
 	//The Euclidean Algorithm is represented as d = q * m + r.
-	Euclidean() {
+	euclidean() {
 		//This algorithm helps us find the GCD of two numbers
-		let m = 0, result, r;
+		let multiplier = 0, result, remainder, run = true;
 
+		//First we find the remainder and multiplier
+		remainder = this.dividend%this.quotient;
+		multiplier = this.dividend/this.quotient;
+		result = this.quotient;
+		let currentQuotient = this.quotient;
 
-		r = this.d%this.q;
-		m = this.d/this.q;
-		result = this.q;
+		//Then we run our algorithm to find the GCD
+		do {
+			if(currentQuotient%remainder == 0) {
+				run = false;
+			} else {
+				remainder = currentQuotient%remainder;
+			}
+		} while(run === false);
 
-		for(let i = result) {
-
-		}
-
+		//Finally we return our result that contains our GCD
+		return result;
 	}
 }
 
@@ -83,6 +91,11 @@ let factorialTest = f.factorial(rand);
 //Permutation and Combination also Factorial
 let result = probabilityTest.type === 1 ? 'combination' : 'permutation';
 console.log(`The ${result} of ${probabilityTest.n} and ${probabilityTest.k} is: ${probabilityTest.calculate()}`);
-console.log(`The result of ${rand}! is the value of: ${factorialTest}`);
+console.log(`${rand}! = ${factorialTest}`);
 
 //Euclidean Algorithm
+let num0 = Math.floor(Math.random()*10);
+let num1 = Math.floor(Math.random()*10);
+const euclideanTest = new Algorithm(num0, num1);
+
+console.log(`The GCD of ${num0} & ${num1} is: ${euclideanTest.euclidean()}`);
