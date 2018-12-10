@@ -74,11 +74,13 @@ class Algorithm {
 
 		//Then we run our algorithm to find the GCD
 		do {
-			if(currentQuotient%remainder == 0) {
-				run = false;
+			if(!(currentQuotient%remainder == 0)) {
+        remainder = currentQuotient%remainder;
 			} else {
-				remainder = currentQuotient%remainder;
+        run = true;
 			}
+
+
 		} while(run === false);
 
 		//Finally we return our result that contains our GCD
