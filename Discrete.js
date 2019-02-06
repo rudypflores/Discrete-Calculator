@@ -23,15 +23,28 @@ class Probability {
 
   factorial(val) {
     //Use recursion to allow creation of factorial function
+    
+    //Iterative Implementation
+
     let result3 = 1;
     if(val === 0) {
-    	return 0;
+    	return 1;
     } else {
 	    for(let i = val; i > 0; i--) {
 	      result3 = result3*i;
 	    }
 	    return result3;
-	}
+	  }
+
+    //Recursive Implementation
+    //When using this implementation, we receive a RangeError because of permutation and combination methods exceeding the amount of calls of factorial().
+    /*
+    if(val === 0) {
+      return 1;
+    } else {
+      return val * this.factorial(val-1);
+    }
+    */
   }
 
   //Formula for permutation
